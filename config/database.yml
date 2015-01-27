@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  database: productss_development
+  template: template0
+
+test:
+  adapter: postgresql
+  database: productss_test
+  template: template0

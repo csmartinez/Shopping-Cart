@@ -1,0 +1,20 @@
+<h1>Manager</h1>
+
+<h4><strong>Add a product</strong></h4>
+
+<form action='/manager' method='post'>
+  <label for='description'>Product Description</label>
+  <input id='description' name='description' type='text'>
+
+  <label for='price'>Price $</label>
+  <input id='price' name='price' type='text'>
+
+  <button type="submit">Add product</button>
+</form>
+
+<% @products.each() do |product| %>
+  <li><%= product.description %> $<%= product.price %> </li>
+
+<% end %>
+
+<p><a href='/'>Back to Quick Store home page</a></p>
