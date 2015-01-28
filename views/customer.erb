@@ -1,11 +1,21 @@
 <h1>products </h1>
 
-<% @products.each() do |product| %>
-<li><h3><%= product.description %> $<%= product.price %><form id="form_id" action="buy" method="post"> <label> <input type="checkbox"> buy me </label></form></h3></li>
-<% end %>
-
 <form id="form_id" action="/cart" method="post">
-  <button type="submit" class="btn btn-default">click to check out</button>
+<ul>
+<% @products.each() do |product| %>
+  <li><%= product.description %> $<%= product.price %>
+
+      <div class = "checkbox">
+        <label> <input type="checkbox" name="product_ids[]" value="<%= product.id() %>"> buy me </label>
+      </div>
+
+
+  </li>
+<% end %>
+<button type="submit" class="btn btn-default">click to check out</button>
+
 </form>
+
+
 
 <p><a href='/'>Back to homepage</a></p>

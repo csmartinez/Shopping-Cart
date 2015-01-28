@@ -1,10 +1,15 @@
-<h1>Here are the items in your shopping cart</h1>
+<h3>Here are the items in your shopping cart</h3>
 
-<ul>
-  <% @purchases.each() do |purchase| %>
-  <li> <%= purchase.description %> $<%= purchase.price %></li>
-</ul>
-<% end %>
+<% total = 0 %>
 
-<form>
-  
+  <ul>
+    <% @selected_products_array.each() do |product| %>
+      <li> <%= product.description %> $<%= product.price %>
+        <% total += product.price %>
+      </li>
+    <% end %>
+  </ul>
+
+<h4>Your total is: $<%= total %></h4>
+
+<h4>Thanks for shopping with us!</h4>
