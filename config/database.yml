@@ -1,9 +1,9 @@
 development:
   adapter: postgresql
-  database: productss_development
+  database: products_development
   template: template0
 
 test:
   adapter: postgresql
-  database: productss_test
+  database: products_test
   template: template0

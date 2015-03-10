@@ -4,7 +4,7 @@
 
   <ul>
     <% @selected_products_array.each() do |product| %>
-      <li> <%= product.description %> $<%= product.price %>
+      <li> <%= product.name %> $<%= product.price %>
         <% total += product.price %>
       </li>
     <% end %>

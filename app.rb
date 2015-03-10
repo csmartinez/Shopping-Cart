@@ -18,9 +18,9 @@ get('/manager') do
 end
 
 post('/manager') do
-  description = params.fetch("description")
+  name = params.fetch("name")
   price = params.fetch("price")
-  @products = Product.create({:description => description})
+  @products = Product.create({:name => name, :price => price})
   redirect('/manager')
   erb(:manager)
 end

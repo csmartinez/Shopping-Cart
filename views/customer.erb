@@ -3,7 +3,7 @@
 <form id="form_id" action="/cart" method="post">
 <ul>
 <% @products.each() do |product| %>
-  <li><%= product.description %> $<%= product.price %>
+  <li><%= product.name %> $<%= product.price %>
 
       <div class = "checkbox">
         <label> <input type="checkbox" name="product_ids[]" value="<%= product.id() %>"> buy me </label>

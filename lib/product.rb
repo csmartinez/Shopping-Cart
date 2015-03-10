@@ -1,4 +1,4 @@
 class Product < ActiveRecord::Base
   belongs_to(:purchases)
-  validates(:description, {:presence => true})
+  validates(:name, {:presence => true})
 end
