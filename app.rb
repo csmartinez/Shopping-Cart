@@ -1,10 +1,6 @@
-require("sinatra")
-require("sinatra/reloader")
-also_reload("lib/**/*.rb")
-require("sinatra/activerecord")
-require("./lib/purchase")
-require("./lib/product")
-
+require('bundler/setup')
+Bundler.require(:default, :test)
+Dir[File.dirname(__FILE__) + "/../lib/*.rb"].each { |file| require file }
 
 require("pg")
 
@@ -37,4 +33,11 @@ post('/cart') do
     @selected_products_array.push(Product.find(product_id))
   end
   erb(:cart)
+end
+
+get('/clear') do
+  Product.all.each do |product|
+    product.destroy
+  end
+  redirect '/manager'
 end
