@@ -1,21 +1,20 @@
-<h1>Manager</h1>
+<h1>Manager/Employees Only</h1>
 
 <h4><strong>Add a product</strong></h4>
 
+<div class="formm">
 <form action='/manager' method='post'>
-  <label for='name'>Product name</label>
+  <label for='name'>Name</label>
   <input id='name' name='name' type='text'>
 
   <label for='price'>Price $</label>
   <input id='price' name='price' type='text'>
 
-  <button type="submit">Add product</button>
-</form>
+  <button class="btn btn-success" type="submit">Add product</button></form>
+</div>
 
 <% @products.each() do |product| %>
   <li><%= product.name %> $<%= product.price %> </li>
 <% end %>
 
-<a href = "/clear">Clear Products</a>
-
-<p><a href='/'>Back to Quick Store home page</a></p>
+<p><a href = "/clear"><button class="btn btn-danger">Clear Products</button> </a><button class="btn btn-success"><a href='/'>Back to Quick Store home page</a></button></p>
